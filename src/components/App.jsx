@@ -1,5 +1,6 @@
-import { FeedbackPage } from "./feedback/Feedback";
+// import { FeedbackPage } from "./feedback/Feedback";
 import { StatPage } from "./statistics/Statistics";
+import FeedbackPage from "./feedback/Feedback";
 
 export const App = () => {
   return (
