@@ -16,7 +16,7 @@ export const App = () => {
       }}
     >
       <FeedbackPage />
-      <StatPage/>
+      
       
     </div>
   );
