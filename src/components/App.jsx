@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { StatPage } from "./statistics/Statistics";
 import FeedbackOptions from "./feedback/Feedback";
+import { FeedbackStyle, Section, SectionTitle, StatisticsBox, StatisticsText } from "./App.styled";
 
 // export const App = () => {
 //   return (
@@ -85,27 +86,28 @@ class App extends Component {
       const options = Object.keys(this.state);
        
       return (
-        <div>
-          <section title="Please leave feedback">
-          <div>
+        // <div>
+          <Section title="Please leave feedback">
+          <FeedbackStyle>
             
             
-              <h2>Please leave feedback</h2>
+              <SectionTitle title="Please leave feedback">
+Please leave feedback</SectionTitle>
               <FeedbackOptions options={options} onLeaveFeedback={HandleClickButton}/>
-          </div>
+          </FeedbackStyle>
                        
-          <div>
+          <StatisticsBox>
                 {countTotalFeedback > 0 ? (
          <StatPage
                 onGood={good}
                 onNeutral={neutral}
                 onBad={bad}
                 onTotal={countTotalFeedback}
-                onPositive={countPositiveFeedback} />) : (<p>There is no feedback</p>)}
+                onPositive={countPositiveFeedback} />) : (<StatisticsText>There is no feedback</StatisticsText>)}
             
-            </div>
-          </section>
-        </div>
+            </StatisticsBox>
+          </Section>
+        // </div>
         )
     }
 }

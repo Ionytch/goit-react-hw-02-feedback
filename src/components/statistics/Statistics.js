@@ -1,8 +1,10 @@
+import { StatisticsItem, Statisticstext, StatisticsTitle } from "./Statistics.styled"
+
 export const StatPage = ({onGood, onNeutral,onBad,onTotal,onPositive}) => {
-    return (<div>
+    return (<StatisticsItem>
                 
-        <h2>STATISTICS</h2><p>good:{onGood}</p><p>neutral:{onNeutral}</p><p>bad:{onBad}</p><p>TOTAL:{onTotal}</p><p>positive feedback:{onPositive}</p>
-            </div>
+        <StatisticsTitle>STATISTICS</StatisticsTitle><Statisticstext>good:{onGood}</Statisticstext><Statisticstext>neutral:{onNeutral}</Statisticstext><Statisticstext>bad:{onBad}</Statisticstext><Statisticstext>TOTAL:{onTotal}</Statisticstext><Statisticstext>positive feedback:{onPositive}</Statisticstext>
+            </StatisticsItem>
         
     )
 }
