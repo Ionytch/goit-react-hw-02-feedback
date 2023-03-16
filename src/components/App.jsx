@@ -1,32 +1,12 @@
 import { Component } from "react";
 import { StatPage } from "./statistics/Statistics";
 import FeedbackOptions from "./feedback/Feedback";
-import { FeedbackStyle, Section, SectionTitle, StatisticsBox, StatisticsText } from "./App.styled";
+import { FeedbackStyle, SectionStyle, StatisticsBox, StatisticsText } from "./App.styled";
+import { Section } from "./Section";
 
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101',
-//         flexDirection: 'column'
-//       }}
-//     >
-//       <FeedbackPage />
-      
-      
-//     </div>
-//   );
-// };
 
 class App extends Component {
-    
-      
-        
+  
     state = {
             good: 0,
             neutral: 0,   
@@ -41,26 +21,7 @@ class App extends Component {
     }
   };
 
-    // CountGood = () => {
-    //     console.log('good');
-    //     console.log(this);
-    //     this.setState(prevState => ({
-    //         good: prevState.good + 1
-    //     }));
-    // }
-    
-    // CountNeutral = () => {
-    //     this.setState(evt => ({
-    //         neutral: evt.neutral + 1,
-    //     }));
-    // }
-    
-    // CountBad = () => {
-    //     this.setState(prevState => ({
-    //         bad: prevState.bad + 1,
-    //     }));
-    // }
-    
+      
     countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
@@ -86,16 +47,15 @@ class App extends Component {
       const options = Object.keys(this.state);
        
       return (
-        // <div>
+        <SectionStyle>
           <Section title="Please leave feedback">
-          <FeedbackStyle>
-            
-            
-              <SectionTitle title="Please leave feedback">
-Please leave feedback</SectionTitle>
+            <FeedbackStyle> 
+              
               <FeedbackOptions options={options} onLeaveFeedback={HandleClickButton}/>
           </FeedbackStyle>
-                       
+          </Section>
+        
+        <Section title="Statistics">          
           <StatisticsBox>
                 {countTotalFeedback > 0 ? (
          <StatPage
@@ -107,7 +67,7 @@ Please leave feedback</SectionTitle>
             
             </StatisticsBox>
           </Section>
-        // </div>
+        </SectionStyle>
         )
     }
 }

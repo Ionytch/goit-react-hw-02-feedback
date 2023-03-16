@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export const Section=styled.section`
+export const SectionStyle=styled.section`
 width:100%;
-
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `
 
 export const FeedbackStyle=styled.div`
@@ -14,6 +17,7 @@ align-items: center;
 
 export const SectionTitle=styled.h2`
 font-weight:700;
+text-align: center;
 `
 export const StatisticsBox=styled.div`
 
